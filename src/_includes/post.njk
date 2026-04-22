@@ -3,7 +3,6 @@ layout: base.njk
 ogType: article
 ---
 {% set metaDate = date | readableDate %}
-{% block body %}
   <header>
     <div class="marquee" aria-hidden="true"><span>{{ tags | join(' · ') }} • {{ title }} • </span></div>
     <div class="card">
@@ -25,4 +24,3 @@ ogType: article
       <a class="btn secondary" href="{{ '/index.html' | url }}">Home</a>
     </div>
   </footer>
-{% endblock %}

@@ -36,7 +36,7 @@
       </aside>
 
       <div class="main">
-        {% block body %}{% endblock %}
+        {{ content | safe }}
         <footer>
           <div class="accent">Under construction · Est. 2026</div>
           <p class="meta">Made with burnt orange, pixels, and semantic HTML. GA anonymized.</p>
