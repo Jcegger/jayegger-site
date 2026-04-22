@@ -27,19 +27,12 @@
         <a class="nav-btn" href="{{ '/about/' | url }}">About</a>
         <a class="nav-btn" href="{{ '/blog/' | url }}">Blog</a>
         <a class="nav-btn" href="{{ '/contact/' | url }}">Contact</a>
-        <div class="badge-row">
-          <img src="{{ '/assets/88x31-personal.svg' | url }}" alt="88x31 badge: personal" height="31" width="88">
-          <img src="{{ '/assets/88x31-retro.svg' | url }}" alt="88x31 badge: retro" height="31" width="88">
-          <img src="{{ '/assets/88x31-construction.svg' | url }}" alt="88x31 badge: under construction" height="31" width="88">
-        </div>
-        <div class="note">Burnt orange, pixels, semantic HTML, RSS-ready.</div>
       </aside>
 
       <div class="main">
         {{ content | safe }}
         <footer>
           <div class="accent">Under construction · Est. 2026</div>
-          <p class="meta">Made with burnt orange, pixels, and semantic HTML. GA anonymized.</p>
         </footer>
       </div>
     </div>
