@@ -26,5 +26,3 @@ if (marquee) {
   marquee.addEventListener('mouseenter', () => marquee.style.animationPlayState = 'paused');
   marquee.addEventListener('mouseleave', () => marquee.style.animationPlayState = 'running');
 }
-
-// Placeholder: replace GA in site data before going live.

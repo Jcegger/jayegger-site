@@ -11,8 +11,8 @@ permalink: /
         <h1>Jay Egger</h1>
         <p class="meta">SEO & growth strategist for content-heavy and finance brands.</p>
         <div class="btn-row">
-          <a class="btn" href="mailto:{{ site.email }}">Hire / Contact</a>
-          <a class="btn secondary" href="#blog">Blog</a>
+          <a class="btn" href="{{ '/contact/' | url }}">Contact</a>
+          <a class="btn secondary" href="{{ '/blog/' | url }}">Blog</a>
         </div>
         <div class="meta">Current: Senior SEO Manager @ SBG Funding — 300% organic growth, 400% inbound leads, GEO/AI wins.</div>
       </div>
@@ -41,8 +41,9 @@ permalink: /
       <div class="grid-2">
         {% for post in displayPosts %}
           <article>
-            <div class="meta">{{ post.data.description }}</div>
+            <div class="meta">{{ post.date | readableDate }}{% if post.data.tags and (post.data.tags | length) > 0 %} · {{ post.data.tags | join(', ') }}{% endif %}</div>
             <h3><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
+            <p>{{ post.data.excerpt or post.data.description }}</p>
           </article>
         {% endfor %}
       </div>
@@ -65,7 +66,7 @@ permalink: /
       <div class="grid-2">
         {% for post in collections.posts | slice(0,4) %}
           <article>
-            <div class="meta">{{ post.date | readableDate }} · {{ post.data.tags | last }}</div>
+            <div class="meta">{{ post.date | readableDate }}{% if post.data.tags and (post.data.tags | length) > 0 %} · {{ post.data.tags | join(', ') }}{% endif %}</div>
             <h3><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
             <p>{{ post.data.excerpt or post.data.description }}</p>
           </article>
@@ -79,10 +80,9 @@ permalink: /
 
     <section class="card" id="contact">
       <div class="accent">Contact</div>
-      <p>Want to collaborate or hire? Use the form or email me directly.</p>
+      <p>Want to collaborate or hire? Head to the contact page.</p>
       <div class="btn-row">
         <a class="btn" href="{{ '/contact/' | url }}">Open contact form</a>
-        <a class="btn secondary" href="mailto:{{ site.email }}">Email Jay</a>
       </div>
     </section>
 
@@ -91,7 +91,6 @@ permalink: /
       <div class="btn-row">
         <a class="btn secondary" href="https://www.linkedin.com/in/jayegger/" target="_blank" rel="noreferrer">LinkedIn</a>
         <a class="btn secondary" href="https://github.com/Jcegger" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="btn secondary" href="mailto:{{ site.email }}">Email</a>
       </div>
     </section>
   </main>

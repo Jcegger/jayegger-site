@@ -5,9 +5,9 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>{{ '/' | url | absolute(site.url) }}</loc></url>
-  <url><loc>{{ '/about.html' | url | absolute(site.url) }}</loc></url>
-  <url><loc>{{ '/blog/index.html' | url | absolute(site.url) }}</loc></url>
-  <url><loc>{{ '/contact.html' | url | absolute(site.url) }}</loc></url>
+  <url><loc>{{ '/about/' | url | absolute(site.url) }}</loc></url>
+  <url><loc>{{ '/blog/' | url | absolute(site.url) }}</loc></url>
+  <url><loc>{{ '/contact/' | url | absolute(site.url) }}</loc></url>
   {% for post in collections.posts %}
   <url><loc>{{ post.url | url | absolute(site.url) }}</loc></url>
   {% endfor %}

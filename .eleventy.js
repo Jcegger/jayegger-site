@@ -1,8 +1,6 @@
 const markdownIt = require("markdown-it");
 
 module.exports = function(eleventyConfig) {
-  const isDraftMode = process.env.ELEVENTY_ENV === "drafts";
-
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/styles.css": "styles.css" });
   eleventyConfig.addPassthroughCopy({ "src/scripts.js": "scripts.js" });
@@ -13,7 +11,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("posts", (collectionApi) => {
     return collectionApi
       .getFilteredByGlob("src/blog/posts/*.md")
-      .filter((item) => isDraftMode || !item.data.draft)
       .sort((a, b) => b.date - a.date);
   });
 
