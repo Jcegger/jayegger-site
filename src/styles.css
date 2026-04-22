@@ -89,6 +89,8 @@ a:visited { color: #c77bff; }
 
 .page { display: grid; gap: 16px; }
 
+.page * { box-sizing: border-box; }
+
 .card {
   background: var(--card);
   color: var(--ink);
@@ -169,6 +171,8 @@ th { background: rgba(191,87,0,0.1); text-align: left; }
 .list,
 .btn-row { max-width: 100%; overflow: hidden; }
 
+h1, h2, h3 { word-break: break-word; }
+
 img { max-width: 100%; height: auto; }
 
 @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
@@ -186,6 +190,7 @@ img { max-width: 100%; height: auto; }
   .nav-chip { flex: 1 1 100%; min-width: 0; }
   .grid-2 { grid-template-columns: 1fr; }
   .btn-row { flex-direction: column; }
+  .marquee span { padding-left: 0; animation: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
