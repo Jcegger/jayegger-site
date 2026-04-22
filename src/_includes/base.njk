@@ -21,20 +21,18 @@
 </head>
 <body>
   <div class="shell">
-    <div class="layout">
-      <aside class="sidebar">
-        <a class="nav-btn" href="{{ '/' | url }}">Home</a>
-        <a class="nav-btn" href="{{ '/about/' | url }}">About</a>
-        <a class="nav-btn" href="{{ '/blog/' | url }}">Blog</a>
-        <a class="nav-btn" href="{{ '/contact/' | url }}">Contact</a>
-      </aside>
+    <nav class="top-nav">
+      <a class="nav-chip" href="{{ '/' | url }}">Home</a>
+      <a class="nav-chip" href="{{ '/about/' | url }}">About</a>
+      <a class="nav-chip" href="{{ '/blog/' | url }}">Blog</a>
+      <a class="nav-chip" href="{{ '/contact/' | url }}">Contact</a>
+    </nav>
 
-      <div class="main">
-        {{ content | safe }}
-        <footer>
-          <div class="accent">Under construction · Est. 2026</div>
-        </footer>
-      </div>
+    <div class="page">
+      {{ content | safe }}
+      <footer>
+        <div class="accent">Under construction · Est. 2026</div>
+      </footer>
     </div>
   </div>
 
