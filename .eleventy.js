@@ -18,7 +18,12 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return new Intl.DateTimeFormat("en", { year: "numeric", month: "short", day: "2-digit" }).format(dateObj);
+    return new Intl.DateTimeFormat("en", {
+      timeZone: "America/New_York",
+      year: "numeric",
+      month: "short",
+      day: "2-digit"
+    }).format(dateObj);
   });
 
   eleventyConfig.addFilter("rfc822", (dateObj) => {

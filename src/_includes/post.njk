@@ -3,8 +3,11 @@ layout: base.njk
 ogType: article
 ---
 {% set metaDate = date | readableDate %}
-{% set updatedDate = updated | readableDate %}
-{% set displayDate = metaDate %}
+{% if updated %}
+  {% set updatedDate = updated | readableDate %}
+{% else %}
+  {% set updatedDate = null %}
+{% endif %}
 {% set postImage = featuredImage or '/assets/og-image.svg' %}
   <header>
     <div class="marquee" aria-hidden="true"><span>{{ tags | join(' · ') }} • {{ title }} • </span></div>
