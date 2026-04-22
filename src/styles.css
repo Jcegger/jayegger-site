@@ -28,31 +28,37 @@ body {
     repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 2px, transparent 2px, transparent 8px),
     radial-gradient(rgba(191,87,0,0.08) 1px, transparent 1px);
   background-size: 12px 12px, 12px 12px, 60px 60px;
+  overflow-x: hidden;
 }
 
 a { color: var(--maize); text-decoration: none; }
 a:hover { color: var(--teal); }
 a:visited { color: #c77bff; }
 
-.shell { max-width: 960px; margin: 0 auto; padding: 18px 14px 64px; }
+.shell { width: 100%; max-width: 960px; margin: 0 auto; padding: 16px 14px 64px; box-sizing: border-box; }
 
 .top-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 12px;
+  gap: 10px;
+  margin-bottom: 14px;
+  background: rgba(12,15,20,0.9);
+  border: 2px solid var(--burnt);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: var(--shadow);
 }
 
 .nav-chip {
-  flex: 1 1 calc(50% - 8px);
+  flex: 1 1 calc(50% - 10px);
   min-width: 140px;
-  padding: 12px 10px;
+  padding: 12px 12px;
   background: linear-gradient(180deg, #fefefe, #e7e2d7);
   border: 2px solid var(--ink);
   border-radius: 12px;
   box-shadow: 0 6px 0 #0c0f14;
   font-family: var(--display);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--ink);
   text-transform: uppercase;
   text-align: center;
@@ -72,9 +78,11 @@ a:visited { color: #c77bff; }
   box-shadow: var(--shadow);
   padding: 18px 20px;
   margin-bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
 
 h1, h2, h3 { font-family: var(--mono); margin: 0 0 12px; color: var(--ink); }
 h1 { font-size: 26px; }
@@ -133,11 +141,20 @@ table { width: 100%; border-collapse: collapse; margin: 12px 0; }
 th, td { border: 1px dashed rgba(0,0,0,0.14); padding: 8px 10px; font-family: var(--mono); font-size: 14px; }
 th { background: rgba(191,87,0,0.1); text-align: left; }
 
+.top-nav,
+.card,
+.hero,
+.grid-2,
+.list,
+.btn-row { max-width: 100%; overflow: hidden; }
+
+img { max-width: 100%; height: auto; }
+
 @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
 
 @media (min-width: 960px) {
   .shell { padding: 24px 18px 80px; }
-  .top-nav { gap: 10px; }
+  .top-nav { gap: 12px; }
   .nav-chip { flex: 0 0 auto; min-width: 120px; }
   .page { gap: 18px; }
   .hero { grid-template-columns: 1.1fr 0.9fr; gap: 18px; }
