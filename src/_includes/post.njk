@@ -3,12 +3,15 @@ layout: base.njk
 ogType: article
 ---
 {% set metaDate = date | readableDate %}
+{% set updatedDate = updated | readableDate %}
+{% set displayDate = metaDate %}
+{% set postImage = featuredImage or '/assets/og-image.svg' %}
   <header>
     <div class="marquee" aria-hidden="true"><span>{{ tags | join(' · ') }} • {{ title }} • </span></div>
     <div class="card">
       <div class="accent">Blog · {{ tags and tags[1] or 'post' }}</div>
       <h1>{{ title }}</h1>
-      <p class="meta">{{ metaDate }} • 3 min read</p>
+      <p class="meta">By {{ site.author }} • {{ metaDate }}{% if updatedDate %} · Updated {{ updatedDate }}{% endif %}</p>
     </div>
   </header>
 
@@ -24,3 +27,24 @@ ogType: article
       <a class="btn secondary" href="{{ '/index.html' | url }}">Home</a>
     </div>
   </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ title | escape }}",
+    "description": "{{ description or excerpt or site.description | escape }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ site.author | escape }}"
+    },
+    "datePublished": "{{ date | isoDate }}",
+    "dateModified": "{{ (updated or date) | isoDate }}",
+    "mainEntityOfPage": "{{ page.url | url | absolute(site.url) }}",
+    "image": "{{ postImage | url | absolute(site.url) }}",
+    "publisher": {
+      "@type": "Person",
+      "name": "{{ site.author | escape }}"
+    }
+  }
+  </script>

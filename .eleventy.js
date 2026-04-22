@@ -1,6 +1,8 @@
 const markdownIt = require("markdown-it");
 
 module.exports = function(eleventyConfig) {
+  const isDraftMode = process.env.ELEVENTY_ENV === "drafts";
+
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/styles.css": "styles.css" });
   eleventyConfig.addPassthroughCopy({ "src/scripts.js": "scripts.js" });
@@ -9,7 +11,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary("md", md);
 
   eleventyConfig.addCollection("posts", (collectionApi) => {
-    return collectionApi.getFilteredByGlob("src/blog/posts/*.md").sort((a, b) => b.date - a.date);
+    return collectionApi
+      .getFilteredByGlob("src/blog/posts/*.md")
+      .filter((item) => isDraftMode || !item.data.draft)
+      .sort((a, b) => b.date - a.date);
   });
 
   eleventyConfig.addFilter("readableDate", (dateObj) => {
@@ -18,6 +23,10 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("rfc822", (dateObj) => {
     return new Date(dateObj).toUTCString();
+  });
+
+  eleventyConfig.addFilter("isoDate", (dateObj) => {
+    return new Date(dateObj).toISOString();
   });
 
   eleventyConfig.addFilter("absolute", (path, siteUrl) => {
