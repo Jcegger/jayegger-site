@@ -127,6 +127,7 @@ p { margin: 0 0 12px; }
 
 .hero-img { position: relative; }
 .hero-img .frame { background: var(--card); border: 2px solid var(--burnt); border-radius: var(--radius); padding: 8px; box-shadow: var(--shadow); min-height: 220px; display: flex; align-items: center; justify-content: center; color: var(--muted); position: relative; overflow: hidden; }
+.hero-img img { width: 100%; height: auto; display: block; border-radius: 6px; object-fit: cover; }
 .hero-img .pixel { position: absolute; bottom: 10px; right: 10px; background: var(--ink); color: var(--card); padding: 8px 10px; font-family: var(--display); font-size: 10px; border: 1px solid var(--burnt); box-shadow: 0 6px 14px rgba(0,0,0,0.4); }
 
 .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
