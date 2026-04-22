@@ -66,7 +66,7 @@ title: "${title}"
 description: "Short description"
 date: ${finalDate}
 updated:
-tags: [post, category]
+tags: [category]
 excerpt: "Short teaser."
 featuredImage:
 featured: false

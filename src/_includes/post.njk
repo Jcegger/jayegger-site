@@ -9,10 +9,18 @@ ogType: article
   {% set updatedDate = null %}
 {% endif %}
 {% set postImage = featuredImage or '/assets/og-image.svg' %}
+{% set primaryTag = 'blog' %}
+{% if tags and (tags | length) > 0 %}
+  {% set primaryTag = tags[0] %}
+{% endif %}
+{% set marqueeText = 'Blog' %}
+{% if tags and (tags | length) > 0 %}
+  {% set marqueeText = tags | join(' · ') %}
+{% endif %}
   <header>
-    <div class="marquee" aria-hidden="true"><span>{{ tags | join(' · ') }} • {{ title }} • </span></div>
+    <div class="marquee" aria-hidden="true"><span>{{ marqueeText }} • {{ title }} • </span></div>
     <div class="card">
-      <div class="accent">Blog · {{ tags and tags[1] or 'post' }}</div>
+      <div class="accent">Blog · {{ primaryTag }}</div>
       <h1>{{ title }}</h1>
       <p class="meta">By {{ site.author }} • {{ metaDate }}{% if updatedDate %} · Updated {{ updatedDate }}{% endif %}</p>
     </div>

@@ -17,14 +17,18 @@ permalink: /blog/
     <section class="card">
       <div class="grid-2">
         {% for post in collections.posts %}
+          {% set tagLine = '' %}
+          {% if post.data.tags and (post.data.tags | length) > 0 %}
+            {% set tagLine = post.data.tags | join(', ') %}
+          {% endif %}
           <article>
-            <div class="meta">{{ post.date | readableDate }} · {{ post.data.tags | last }}</div>
+            <div class="meta">{{ post.date | readableDate }}{% if tagLine %} · {{ tagLine }}{% endif %}</div>
             <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
             <p>{{ post.data.excerpt or post.data.description }}</p>
-            {% if post.data.tags %}
+            {% if post.data.tags and (post.data.tags | length) > 0 %}
               <div class="tags">
                 {% for tag in post.data.tags %}
-                  {% if tag != 'post' %}<span class="tag">{{ tag }}</span>{% endif %}
+                  <span class="tag">{{ tag }}</span>
                 {% endfor %}
               </div>
             {% endif %}
