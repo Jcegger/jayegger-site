@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="31" viewBox="0 0 88 31">
+  <rect width="88" height="31" fill="#111822" rx="3"/>
+  <rect x="2" y="2" width="84" height="27" rx="2" fill="#0c0f14" stroke="#3caea3" stroke-width="2"/>
+  <text x="50%" y="60%" text-anchor="middle" font-family="'Press Start 2P', monospace" font-size="9" fill="#f7c948">retro</text>
+</svg>

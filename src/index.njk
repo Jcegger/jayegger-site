@@ -1,0 +1,99 @@
+---
+layout: base.njk
+title: Jay Egger | SEO & Growth
+description: SEO and growth strategist who scales traffic, leads, and revenue for content-heavy and finance brands.
+permalink: /
+---
+{% block body %}
+  <header>
+    <div class="marquee" aria-hidden="true"><span>Under construction • Made with burnt orange + pixels • Optimized for humans & bots • </span></div>
+    <div class="hero" id="top">
+      <div class="card">
+        <div class="accent">&lt;hello world/&gt;</div>
+        <h1>Jay Egger</h1>
+        <p class="meta">SEO & growth strategist who scales traffic, leads, and revenue for content-heavy and finance brands.</p>
+        <div class="btn-row">
+          <a class="btn" href="mailto:{{ site.email }}">Hire / Contact</a>
+          <a class="btn secondary" href="#projects">Projects</a>
+          <a class="btn secondary" href="#blog">Blog</a>
+          <a class="btn secondary" href="{{ '/contact/' | url }}">Contact form</a>
+        </div>
+        <div class="meta">Current: Senior SEO Manager @ SBG Funding — 300% organic growth, 400% inbound leads, GEO/AI wins.</div>
+      </div>
+      <div class="hero-img">
+        <div class="frame">Drop your photo here (placeholder)</div>
+        <div class="pixel">01001010</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card" id="now">
+      <div class="accent">Now</div>
+      <p>Running SEO, CRO, and GEO strategy for commercial finance audiences. I build landing pages, content systems, and lightweight tools (Python/SQL) that turn traffic into qualified leads. Previously scaled WordPress portfolios to 103M monthly sessions, launched House Digest from zero, and shipped AI/EEAT programs across 21 sites.</p>
+    </section>
+
+    <section class="card" id="writing">
+      <div class="accent">Featured Writing</div>
+      <div class="grid-2">
+        {% for post in collections.posts | slice(0,4) %}
+          <article>
+            <h3><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
+            <p class="meta">{{ post.data.description }}</p>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="card" id="projects">
+      <div class="accent">Projects</div>
+      <div class="grid-2">
+        <article>
+          <h3>Project One</h3>
+          <p class="meta">Placeholder for a future build. Swap in your shipped thing.</p>
+          <a class="btn secondary" href="#">Details soon</a>
+        </article>
+        <article>
+          <h3>Project Two</h3>
+          <p class="meta">Another slot for something shippable. Keep it distinct from the resume.</p>
+          <a class="btn secondary" href="#">Details soon</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="card" id="blog">
+      <div class="accent">Blog Roll</div>
+      <div class="grid-2">
+        {% for post in collections.posts | slice(0,4) %}
+          <article>
+            <div class="meta">{{ post.date | readableDate }} · {{ post.data.tags | last }}</div>
+            <h3><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
+            <p>{{ post.data.excerpt or post.data.description }}</p>
+          </article>
+        {% endfor %}
+      </div>
+      <div class="btn-row">
+        <a class="btn secondary" href="{{ '/blog/' | url }}">View all posts</a>
+        <a class="btn secondary" href="{{ '/rss.xml' | url }}">RSS</a>
+      </div>
+    </section>
+
+    <section class="card" id="contact">
+      <div class="accent">Contact</div>
+      <p>Want to collaborate or hire? Use the form or email me directly.</p>
+      <div class="btn-row">
+        <a class="btn" href="{{ '/contact/' | url }}">Open contact form</a>
+        <a class="btn secondary" href="mailto:{{ site.email }}">Email Jay</a>
+      </div>
+    </section>
+
+    <section class="card" id="links">
+      <div class="accent">Links</div>
+      <div class="btn-row">
+        <a class="btn secondary" href="https://www.linkedin.com/in/jayegger/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn secondary" href="https://github.com/Jcegger" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn secondary" href="mailto:{{ site.email }}">Email</a>
+      </div>
+    </section>
+  </main>
+{% endblock %}

@@ -1,0 +1,47 @@
+---
+layout: base.njk
+title: About | Jay Egger
+description: About Jay Egger — SEO and growth strategist.
+permalink: /about/
+---
+{% block body %}
+  <header>
+    <div class="marquee" aria-hidden="true"><span>About Jay • SEO, GEO, CRO, content systems • Burnt orange fan • </span></div>
+    <div class="card">
+      <div class="accent">About</div>
+      <h1>Jay Egger</h1>
+      <p class="meta">Brooklyn, NY · SEO & Growth · UT Austin alum · Georgetown MS Business Analytics.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="accent">What I Do</div>
+      <p>I grow traffic, leads, and revenue for content-heavy and finance brands. I run SEO strategy, content systems, and CRO programs; build lightweight tools in Python/SQL; and make sure pages are fast, structured, and human-readable.</p>
+    </section>
+
+    <section class="card">
+      <div class="accent">Recent</div>
+      <ul class="list">
+        <li>SBG Funding — 300% organic traffic, 400% inbound leads; GEO/AI visibility (515 mentions); CRO lift 11.2%.</li>
+        <li>Static Media — grew 21-site WordPress portfolio to 103M monthly sessions; launched House Digest 0 → 22M; scaled Slashgear & Tasting Table post-acquisition.</li>
+        <li>Dotdash — ran SEO for TheSpruceEats (45M) and SimplyRecipes (22M); built Trend Bot (Python + Google Trends).</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="accent">Skills & Stack</div>
+      <p class="meta">SEO/GEO strategy, CRO, content ops, technical SEO, prompt engineering, Python, SQL, data analysis, ML</p>
+      <p class="meta">Tools: GA4, Search Console, SEMrush, Ahrefs, Looker Studio, Salesforce, WordPress, Google Ads, BigQuery, GTM, GCP, Git, Zapier, Claude/ChatGPT, Docker</p>
+    </section>
+
+    <section class="card">
+      <div class="accent">Elsewhere</div>
+      <div class="btn-row">
+        <a class="btn secondary" href="https://www.linkedin.com/in/jayegger/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn secondary" href="https://github.com/Jcegger" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn secondary" href="mailto:{{ site.email }}">Email</a>
+      </div>
+    </section>
+  </main>
+{% endblock %}

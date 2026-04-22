@@ -1,0 +1,44 @@
+---
+layout: base.njk
+title: Blog | Jay Egger
+description: Posts on SEO, GEO, CRO, and content strategy by Jay Egger.
+permalink: /blog/
+---
+{% block body %}
+  <header>
+    <div class="marquee" aria-hidden="true"><span>Blog • SEO · GEO · CRO · content systems • Updated when vibes allow • </span></div>
+    <div class="card">
+      <div class="accent">Blog</div>
+      <h1>Writing on SEO, GEO, CRO, and content systems</h1>
+      <p class="meta">Subscribe via RSS or check the latest below.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="grid-2">
+        {% for post in collections.posts %}
+          <article>
+            <div class="meta">{{ post.date | readableDate }} · {{ post.data.tags | last }}</div>
+            <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+            <p>{{ post.data.excerpt or post.data.description }}</p>
+            {% if post.data.tags %}
+              <div class="tags">
+                {% for tag in post.data.tags %}
+                  {% if tag != 'post' %}<span class="tag">{{ tag }}</span>{% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="btn-row">
+      <a class="btn secondary" href="{{ '/' | url }}">Home</a>
+      <a class="btn secondary" href="{{ '/rss.xml' | url }}">RSS</a>
+    </div>
+  </footer>
+{% endblock %}

@@ -1,0 +1,54 @@
+---
+layout: base.njk
+title: Contact | Jay Egger
+description: Get in touch with Jay Egger.
+permalink: /contact/
+---
+{% block body %}
+  <header>
+    <div class="marquee" aria-hidden="true"><span>Contact Jay • SEO, GEO, CRO, content systems • Replies in business hours • </span></div>
+    <div class="card">
+      <div class="accent">Contact</div>
+      <h1>Let’s talk growth</h1>
+      <p class="meta">Email, form, or LinkedIn — pick your channel.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="accent">Form</div>
+      <form id="contact-form" action="https://formspree.io/f/{{ site.formspreeId }}" method="POST">
+        <input type="hidden" name="_subject" value="New site contact">
+        <input type="hidden" name="_next" value="/contact/?sent=1">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required placeholder="You">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required placeholder="What you’d like to work on."></textarea>
+        </div>
+        <div class="field honeypot" aria-hidden="true">
+          <label for="website">Website</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <button class="btn" type="submit">Send</button>
+        <p class="meta">Formspree placeholder — replace site.formspreeId with your endpoint.</p>
+        <div id="status" class="meta" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="accent">Direct</div>
+      <p>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      <div class="btn-row">
+        <a class="btn secondary" href="mailto:{{ site.email }}">Open mailto</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/jayegger/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+{% endblock %}

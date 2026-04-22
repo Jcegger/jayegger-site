@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="JE">
+  <rect width="64" height="64" rx="10" fill="#111822"/>
+  <rect x="6" y="6" width="52" height="52" rx="8" fill="#f6f0e9" stroke="#bf5700" stroke-width="4"/>
+  <text x="50%" y="54%" text-anchor="middle" font-family="'Press Start 2P', monospace" font-size="14" fill="#bf5700">JE</text>
+</svg>

@@ -1,0 +1,28 @@
+---
+layout: base.njk
+ogType: article
+---
+{% set metaDate = date | readableDate %}
+{% block body %}
+  <header>
+    <div class="marquee" aria-hidden="true"><span>{{ tags | join(' · ') }} • {{ title }} • </span></div>
+    <div class="card">
+      <div class="accent">Blog · {{ tags and tags[1] or 'post' }}</div>
+      <h1>{{ title }}</h1>
+      <p class="meta">{{ metaDate }} • 3 min read</p>
+    </div>
+  </header>
+
+  <main>
+    <article class="card">
+      {{ content | safe }}
+    </article>
+  </main>
+
+  <footer>
+    <div class="btn-row">
+      <a class="btn secondary" href="{{ '/blog/index.html' | url }}">Back to blog</a>
+      <a class="btn secondary" href="{{ '/index.html' | url }}">Home</a>
+    </div>
+  </footer>
+{% endblock %}

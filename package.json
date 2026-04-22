@@ -1,0 +1,12 @@
+{
+  "name": "jay-egger-site",
+  "private": true,
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "markdown-it": "^14.0.0"
+  }
+}
