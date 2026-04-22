@@ -40,6 +40,10 @@ module.exports = function(eleventyConfig) {
     return `${base}${path}`;
   });
 
+  eleventyConfig.addFilter("featuredOnly", (arr) => {
+    return (arr || []).filter((item) => item.data && item.data.featured);
+  });
+
   return {
     dir: {
       input: "src",

@@ -69,6 +69,7 @@ updated:
 tags: [post, category]
 excerpt: "Short teaser."
 featuredImage:
+featured: false
 draft: true
 ---
 

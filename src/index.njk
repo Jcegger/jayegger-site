@@ -32,14 +32,23 @@ permalink: /
 
     <section class="card" id="writing">
       <div class="accent">Featured Writing</div>
+      {% set featuredPosts = collections.posts | featuredOnly %}
+      {% set displayPosts = featuredPosts %}
+      {% if not displayPosts or (displayPosts | length) == 0 %}
+        {% set displayPosts = collections.posts | slice(0,3) %}
+      {% endif %}
+      {% if displayPosts and (displayPosts | length) > 0 %}
       <div class="grid-2">
-        {% for post in collections.posts | slice(0,4) %}
+        {% for post in displayPosts %}
           <article>
+            <div class="meta">{{ post.data.description }}</div>
             <h3><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
-            <p class="meta">{{ post.data.description }}</p>
           </article>
         {% endfor %}
       </div>
+      {% else %}
+      <p class="meta">No posts yet—publish and mark a post as featured to show it here.</p>
+      {% endif %}
     </section>
 
     <section class="card" id="projects">
