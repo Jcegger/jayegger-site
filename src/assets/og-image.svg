@@ -8,7 +8,7 @@
   <rect width="1200" height="630" fill="url(#bg)" />
   <rect x="80" y="80" width="1040" height="470" rx="20" fill="#f6f0e9" stroke="#bf5700" stroke-width="8" />
   <text x="120" y="200" font-family="'Press Start 2P', monospace" font-size="32" fill="#bf5700">Jay Egger</text>
-  <text x="120" y="260" font-family="'Syne Mono', monospace" font-size="32" fill="#0c0f14">SEO & Growth</text>
+  <text x="120" y="260" font-family="'Syne Mono', monospace" font-size="32" fill="#0c0f14">SEO &amp; Growth</text>
   <text x="120" y="320" font-family="'Syne Mono', monospace" font-size="24" fill="#3caea3">Content systems · GEO · CRO · Python/SQL</text>
   <text x="120" y="380" font-family="'Syne Mono', monospace" font-size="22" fill="#6b7280">Burnt orange, pixels, semantic HTML, fast loads.</text>
 </svg>

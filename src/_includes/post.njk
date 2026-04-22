@@ -8,7 +8,7 @@ ogType: article
 {% else %}
   {% set updatedDate = null %}
 {% endif %}
-{% set postImage = featuredImage or '/assets/og-image.svg' %}
+{% set postImage = featuredImage or '/assets/og-image.png' %}
 {% set primaryTag = 'blog' %}
 {% if tags and (tags | length) > 0 %}
   {% set primaryTag = tags[0] %}

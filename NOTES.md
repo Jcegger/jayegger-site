@@ -33,6 +33,12 @@
 - Add `draft: true` to exclude from production
 - Preview drafts locally: `npm run dev:drafts` (or `ELEVENTY_ENV=drafts npm run dev`)
 
+## Images
+- Source originals (full-res, not served): `assets-src/`
+- Optimized/served variants: `src/assets/`
+- Regenerate: `npm run optimize:images` (resizes hero, rasterizes OG + apple-touch icon)
+- To swap the headshot: replace `assets-src/jay-egger-headshot.JPG`, rerun `npm run optimize:images`
+
 ## How to add a post
 1) `npm run new:post -- --title "My Post" [--slug slug] [--date YYYY-MM-DD]` (creates draft by default)
 2) Edit front matter/content; optional fields:

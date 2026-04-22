@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: Jay Egger | SEO & Growth
+title: Jay Egger — SEO & Growth Strategist
 description: SEO and growth strategist who scales traffic, leads, and revenue for content-heavy and finance brands.
 permalink: /
 ---
@@ -18,7 +18,10 @@ permalink: /
       </div>
       <div class="card hero-img">
         <div class="frame">
-          <img src="{{ '/assets/jay-egger-headshot.JPG' | url }}" alt="Jay Egger headshot">
+          <picture>
+            <source type="image/webp" srcset="{{ '/assets/jay-egger-headshot-800.webp' | url }}">
+            <img src="{{ '/assets/jay-egger-headshot-800.jpg' | url }}" alt="Jay Egger headshot" width="800" height="1000" loading="eager" decoding="async" fetchpriority="high">
+          </picture>
         </div>
       </div>
     </div>

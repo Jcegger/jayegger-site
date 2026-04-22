@@ -3,33 +3,53 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title or site.title }}</title>
+  {% if title and title != site.title %}
+    {% set fullTitle = title + ' · ' + site.author %}
+  {% else %}
+    {% set fullTitle = site.title %}
+  {% endif %}
+  <title>{{ fullTitle }}</title>
   <meta name="description" content="{{ description or site.description }}" />
+  <meta name="theme-color" content="#111822" />
+  <meta name="apple-mobile-web-app-title" content="{{ site.author }}" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Syne+Mono&display=swap" as="style">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Syne+Mono&display=swap">
   <link rel="stylesheet" href="{{ '/styles.css' | url }}">
   <link rel="icon" href="{{ '/assets/favicon.svg' | url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | url }}">
   <link rel="alternate" type="application/rss+xml" title="Jay Egger RSS" href="{{ '/rss.xml' | url }}">
-  <meta property="og:title" content="{{ title or site.title }}" />
+  <meta property="og:title" content="{{ fullTitle }}" />
   <meta property="og:description" content="{{ description or site.description }}" />
   <meta property="og:type" content="{{ ogType or 'website' }}" />
   <meta property="og:url" content="{{ page.url | url | absolute(site.url) }}" />
-  <meta property="og:image" content="{{ (featuredImage or ogImage or '/assets/og-image.svg') | url | absolute(site.url) }}" />
-  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:image" content="{{ (featuredImage or ogImage or '/assets/og-image.png') | url | absolute(site.url) }}" />
+  <meta property="og:site_name" content="{{ site.author }}" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="{{ title or site.title }}" />
+  <meta name="twitter:title" content="{{ fullTitle }}" />
   <meta name="twitter:description" content="{{ description or site.description }}" />
-  <meta name="twitter:image" content="{{ (featuredImage or ogImage or '/assets/og-image.svg') | url | absolute(site.url) }}" />
+  <meta name="twitter:image" content="{{ (featuredImage or ogImage or '/assets/og-image.png') | url | absolute(site.url) }}" />
   <link rel="canonical" href="{{ page.url | url | absolute(site.url) }}" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Jay Egger",
+    "name": "{{ site.author }}",
     "url": "{{ site.url }}",
+    "image": "{{ '/assets/jay-egger-headshot-800.jpg' | url | absolute(site.url) }}",
+    "description": "{{ site.description }}",
     "jobTitle": "SEO & Growth Strategist",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "SBG Funding",
+      "url": "https://sbgfunding.com"
+    },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "The University of Texas at Austin" },
+      { "@type": "CollegeOrUniversity", "name": "Georgetown University" }
+    ],
+    "knowsAbout": ["SEO", "Generative Engine Optimization", "Conversion Rate Optimization", "Content Strategy", "Python", "SQL"],
     "sameAs": [
       "https://www.linkedin.com/in/jayegger/",
       "https://github.com/Jcegger"

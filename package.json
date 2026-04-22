@@ -5,10 +5,12 @@
     "dev": "eleventy --serve",
     "dev:drafts": "ELEVENTY_ENV=drafts eleventy --serve",
     "build": "eleventy",
-    "new:post": "node scripts/new-post.js"
+    "new:post": "node scripts/new-post.js",
+    "optimize:images": "node scripts/optimize-images.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "markdown-it": "^14.0.0"
+    "markdown-it": "^14.0.0",
+    "sharp": "^0.34.5"
   }
 }

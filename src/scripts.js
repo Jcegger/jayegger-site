@@ -18,7 +18,22 @@ document.addEventListener('click', (event) => {
 const statusEl = document.getElementById('status');
 if (statusEl && window.location.search.includes('sent=1')) {
   statusEl.textContent = 'Thanks — your message was sent!';
+  if (typeof gtag === 'function') gtag('event', 'form_submit', { form: 'contact' });
 }
+
+// GA4 event tracking on key outbound / contact CTAs
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('a[href]');
+  if (!link || typeof gtag !== 'function') return;
+  const href = link.getAttribute('href');
+  let name = null;
+  if (href.startsWith('mailto:')) name = 'email_click';
+  else if (href.includes('linkedin.com')) name = 'linkedin_click';
+  else if (href.includes('github.com')) name = 'github_click';
+  else if (href.endsWith('/rss.xml') || href.endsWith('rss.xml')) name = 'rss_click';
+  else if (href === '/contact/' || href.endsWith('/contact/')) name = 'contact_click';
+  if (name) gtag('event', name, { href, label: link.textContent.trim().slice(0, 60) });
+});
 
 // Light marquee pause on hover
 const marquee = document.querySelector('.marquee span');
