@@ -17,7 +17,25 @@
   <meta property="og:type" content="{{ ogType or 'website' }}" />
   <meta property="og:url" content="{{ page.url | url | absolute(site.url) }}" />
   <meta property="og:image" content="{{ '/assets/og-image.svg' | url | absolute(site.url) }}" />
+  <meta property="og:site_name" content="{{ site.title }}" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ title or site.title }}" />
+  <meta name="twitter:description" content="{{ description or site.description }}" />
+  <meta name="twitter:image" content="{{ '/assets/og-image.svg' | url | absolute(site.url) }}" />
+  <link rel="canonical" href="{{ page.url | url | absolute(site.url) }}" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jay Egger",
+    "url": "{{ site.url }}",
+    "jobTitle": "SEO & Growth Strategist",
+    "sameAs": [
+      "https://www.linkedin.com/in/jayegger/",
+      "https://github.com/Jcegger"
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="shell">
