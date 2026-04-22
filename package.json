@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "eleventy --serve",
+    "dev:drafts": "ELEVENTY_ENV=drafts eleventy --serve",
     "build": "eleventy",
     "new:post": "node scripts/new-post.js"
   },

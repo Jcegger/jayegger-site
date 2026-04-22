@@ -4,7 +4,7 @@ title: "Why Your Vibe Coding Project Sucks"
 description: "A critique of aesthetic-first AI-built projects that ship slow, unclear, and unfindable experiences."
 date: 2026-04-22
 updated:
-tags: [post, marketing]
+tags: [LLMs]
 excerpt: "When vibes ship without speed, clarity, or intent coverage, everyone loses."
 featuredImage:
 featured: true
