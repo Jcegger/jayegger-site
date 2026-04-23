@@ -72,22 +72,6 @@ textarea:focus-visible {
   border-color: var(--burnt);
 }
 
-.skip-link {
-  position: absolute;
-  top: -48px;
-  left: 8px;
-  background: var(--maize);
-  color: var(--ink);
-  padding: 10px 14px;
-  font-family: var(--display);
-  font-size: 11px;
-  border: 2px solid var(--ink);
-  border-radius: 8px;
-  z-index: 100;
-  transition: top 120ms ease;
-}
-.skip-link:focus { top: 8px; color: var(--ink); }
-
 .shell { width: min(960px, 100%); margin: 0 auto; padding: clamp(12px, 3vw, 18px); box-sizing: border-box; }
 
 .topbar {
@@ -97,17 +81,6 @@ textarea:focus-visible {
   align-items: center;
   margin-bottom: 12px;
   width: 100%;
-}
-
-.brand {
-  font-family: var(--display);
-  font-size: 12px;
-  color: var(--maize);
-  padding: 10px 12px;
-  border: 2px solid var(--burnt);
-  border-radius: 10px;
-  background: rgba(12,15,20,0.9);
-  box-shadow: var(--shadow);
 }
 
 .top-nav {
@@ -280,7 +253,6 @@ img { max-width: 100%; height: auto; }
   .nav-link { flex: 1 1 100%; min-width: 0; }
   .btn-row { flex-direction: column; }
   .topbar { flex-direction: column; align-items: stretch; }
-  .brand { width: 100%; text-align: center; }
   .top-nav { width: 100%; }
   .marquee span { padding-left: 0; animation: none; white-space: normal; }
 }
