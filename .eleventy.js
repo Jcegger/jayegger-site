@@ -4,6 +4,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/styles.css": "styles.css" });
   eleventyConfig.addPassthroughCopy({ "src/scripts.js": "scripts.js" });
+  eleventyConfig.addPassthroughCopy({ "_redirects": "_redirects" });
+  eleventyConfig.addPassthroughCopy({ "_headers": "_headers" });
 
   const md = markdownIt({ html: true, linkify: true, breaks: false }).enable(["table"]);
   eleventyConfig.setLibrary("md", md);

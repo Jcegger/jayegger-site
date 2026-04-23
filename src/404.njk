@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: Not Found
+description: That page doesn't exist — head back to the homepage or grab the latest from the blog.
+permalink: /404.html
+eleventyExcludeFromCollections: true
+---
+<header>
+  <div class="marquee" aria-hidden="true"><span>404 • Page not found • </span></div>
+  <div class="card">
+    <div class="accent">404</div>
+    <h1>Page not found</h1>
+    <p class="meta">Broken link or stale URL. Try one of these.</p>
+  </div>
+</header>
+
+<main>
+  <section class="card">
+    <div class="btn-row">
+      <a class="btn" href="{{ '/' | url }}">Home</a>
+      <a class="btn secondary" href="{{ '/blog/' | url }}">Blog</a>
+      <a class="btn secondary" href="{{ '/about/' | url }}">About</a>
+      <a class="btn secondary" href="{{ '/contact/' | url }}">Contact</a>
+    </div>
+  </section>
+</main>

@@ -12,10 +12,8 @@
   <meta name="description" content="{{ description or site.description }}" />
   <meta name="theme-color" content="#111822" />
   <meta name="apple-mobile-web-app-title" content="{{ site.author }}" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Syne+Mono&display=swap" as="style">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Syne+Mono&display=swap">
+  <link rel="preload" href="{{ '/assets/fonts/press-start-2p.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/syne-mono.woff2' | url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/styles.css' | url }}">
   <link rel="icon" href="{{ '/assets/favicon.svg' | url }}">
   <link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | url }}">

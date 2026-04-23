@@ -3,19 +3,21 @@ permalink: /rss.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ site.title }}</title>
     <link>{{ site.url }}</link>
+    <atom:link href="{{ '/rss.xml' | url | absolute(site.url) }}" rel="self" type="application/rss+xml" />
     <description>{{ site.description }}</description>
     <language>en-us</language>
     {% for post in collections.posts %}
     <item>
       <title>{{ post.data.title }}</title>
       <link>{{ post.url | url | absolute(site.url) }}</link>
-      <guid>{{ post.url | url | absolute(site.url) }}</guid>
+      <guid isPermaLink="true">{{ post.url | url | absolute(site.url) }}</guid>
       <pubDate>{{ post.date | rfc822 }}</pubDate>
-      <description>{{ post.data.description }}</description>
+      <description>{{ post.data.excerpt or post.data.description }}</description>
+      <content:encoded><![CDATA[{{ post.templateContent | safe }}]]></content:encoded>
     </item>
     {% endfor %}
   </channel>
