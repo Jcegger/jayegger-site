@@ -31,6 +31,7 @@ document.addEventListener('click', (event) => {
   else if (href.includes('linkedin.com')) name = 'linkedin_click';
   else if (href.includes('github.com')) name = 'github_click';
   else if (href.endsWith('/rss.xml') || href.endsWith('rss.xml')) name = 'rss_click';
+  else if (href.endsWith('jay-egger-resume.pdf')) name = 'resume_click';
   else if (href === '/contact/' || href.endsWith('/contact/')) name = 'contact_click';
   if (name) gtag('event', name, { href, label: link.textContent.trim().slice(0, 60) });
 });
