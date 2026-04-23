@@ -9,6 +9,9 @@ eleventyExcludeFromCollections: true
   <url><loc>{{ '/blog/' | url | absolute(site.url) }}</loc></url>
   <url><loc>{{ '/contact/' | url | absolute(site.url) }}</loc></url>
   {% for post in collections.posts %}
-  <url><loc>{{ post.url | url | absolute(site.url) }}</loc></url>
+  <url>
+    <loc>{{ post.url | url | absolute(site.url) }}</loc>
+    <lastmod>{{ (post.data.updated or post.date) | isoDate }}</lastmod>
+  </url>
   {% endfor %}
 </urlset>

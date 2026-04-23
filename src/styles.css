@@ -58,6 +58,36 @@ a { color: var(--maize); text-decoration: none; }
 a:hover { color: var(--teal); }
 a:visited { color: #c77bff; }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--maize);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--burnt);
+  outline-offset: 1px;
+  border-color: var(--burnt);
+}
+
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 8px;
+  background: var(--maize);
+  color: var(--ink);
+  padding: 10px 14px;
+  font-family: var(--display);
+  font-size: 11px;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  z-index: 100;
+  transition: top 120ms ease;
+}
+.skip-link:focus { top: 8px; color: var(--ink); }
+
 .shell { width: min(960px, 100%); margin: 0 auto; padding: clamp(12px, 3vw, 18px); box-sizing: border-box; }
 
 .topbar {
