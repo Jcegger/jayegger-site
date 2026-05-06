@@ -1,0 +1,73 @@
+---
+layout: base.njk
+ogType: article
+---
+{% set techLine = '' %}
+{% if tech and (tech | length) > 0 %}
+  {% set techLine = tech | join(' · ') %}
+{% endif %}
+{% set marqueeText = title %}
+{% if techLine %}
+  {% set marqueeText = techLine + ' · ' + title %}
+{% endif %}
+<header>
+  <div class="marquee" aria-hidden="true"><span>Projects • {{ marqueeText }} • </span></div>
+  <div class="card">
+    <div class="accent">Projects{% if status %} · {{ status }}{% endif %}</div>
+    <h1>{{ title }}</h1>
+    <p class="meta">{{ excerpt or description }}</p>
+    {% if tech and (tech | length) > 0 %}
+      <div class="tags" style="margin: 10px 0;">
+        {% for t in tech %}
+          <span class="tag">{{ t }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <div class="btn-row">
+      {% if liveUrl %}
+        <a class="btn" href="{{ liveUrl }}" target="_blank" rel="noopener noreferrer">View Live</a>
+      {% endif %}
+      {% if githubUrl %}
+        <a class="btn secondary" href="{{ githubUrl }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+      {% endif %}
+    </div>
+  </div>
+</header>
+
+<main>
+  <article class="card">
+    {{ content | safe }}
+  </article>
+</main>
+
+<footer>
+  <div class="btn-row">
+    <a class="btn secondary" href="{{ '/projects/' | url }}">Back to projects</a>
+    <a class="btn secondary" href="{{ '/' | url }}">Home</a>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "{{ title | escape }}",
+  "description": "{{ description or excerpt | escape }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author | escape }}"
+  }{% if liveUrl %},
+  "url": "{{ liveUrl }}"{% endif %}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ '/' | url | absolute(site.url) }}" },
+    { "@type": "ListItem", "position": 2, "name": "Projects", "item": "{{ '/projects/' | url | absolute(site.url) }}" },
+    { "@type": "ListItem", "position": 3, "name": "{{ title | escape }}" }
+  ]
+}
+</script>

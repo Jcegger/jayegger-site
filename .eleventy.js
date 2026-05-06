@@ -16,6 +16,12 @@ module.exports = function(eleventyConfig) {
       .sort((a, b) => b.date - a.date);
   });
 
+  eleventyConfig.addCollection("projects", (collectionApi) => {
+    return collectionApi
+      .getFilteredByGlob("src/projects/items/*.md")
+      .sort((a, b) => b.date - a.date);
+  });
+
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return new Intl.DateTimeFormat("en", {
       timeZone: "America/New_York",

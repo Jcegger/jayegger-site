@@ -1,0 +1,41 @@
+---
+layout: base.njk
+title: Projects
+description: Side projects and tools by Jay Egger — an LSAT prep tracker, a League of Legends coaching assistant, and more.
+permalink: /projects/
+---
+<header>
+  <div class="marquee" aria-hidden="true"><span>Projects • Things I ship • Side projects • Tools • </span></div>
+  <div class="card">
+    <div class="accent">Projects</div>
+    <h1>Things I've built</h1>
+    <p class="meta">Side projects, tools, and experiments.</p>
+  </div>
+</header>
+
+<main>
+  <section class="card">
+    <div class="grid-2">
+      {% for project in collections.projects %}
+        <article>
+          <div class="meta">{{ project.date | readableDate }}{% if project.data.status %} · {{ project.data.status }}{% endif %}</div>
+          <h2><a href="{{ project.url | url }}">{{ project.data.title }}</a></h2>
+          <p>{{ project.data.excerpt or project.data.description }}</p>
+          {% if project.data.tech and (project.data.tech | length) > 0 %}
+            <div class="tags">
+              {% for t in project.data.tech %}
+                <span class="tag">{{ t }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="btn-row">
+    <a class="btn secondary" href="{{ '/' | url }}">Home</a>
+  </div>
+</footer>

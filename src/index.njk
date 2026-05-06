@@ -56,12 +56,24 @@ permalink: /
     </section>
 
     <section class="card" id="projects">
-      <div class="accent">Featured Project</div>
-      <article>
-        <h3>Coming soon</h3>
-        <p class="meta">A featured build will live here. Keep this slot ready for your next launch.</p>
-        <a class="btn secondary" href="#">Details soon</a>
-      </article>
+      <div class="accent">Featured Projects</div>
+      {% set featuredProjects = collections.projects | featuredOnly %}
+      {% if featuredProjects and (featuredProjects | length) > 0 %}
+      <div class="grid-2">
+        {% for project in featuredProjects %}
+          <article>
+            <div class="meta">{% if project.data.status %}{{ project.data.status }}{% endif %}{% if project.data.tech and (project.data.tech | length) > 0 %}{% if project.data.status %} · {% endif %}{{ project.data.tech | join(', ') }}{% endif %}</div>
+            <h3><a href="{{ project.url | url }}">{{ project.data.title }}</a></h3>
+            <p>{{ project.data.excerpt or project.data.description }}</p>
+          </article>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p class="meta">No featured projects yet.</p>
+      {% endif %}
+      <div class="btn-row">
+        <a class="btn secondary" href="{{ '/projects/' | url }}">View all projects</a>
+      </div>
     </section>
 
     <section class="card" id="blog">
