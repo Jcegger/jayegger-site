@@ -12,6 +12,7 @@ timeline: Jan 2026 – present
 liveUrl: https://lsat.jayegger.com
 githubUrl: https://github.com/Jcegger/lsat
 tech: [HTML, CSS, JavaScript, Supabase]
+stackDetail: "Vanilla HTML, CSS, and JavaScript with no build step -- fast to iterate, nothing to configure. Supabase handles the Postgres backend and auth so session data syncs across devices without managing a server. Hosted on GitHub Pages with Cloudflare in front for DNS and caching."
 draft: false
 ---
 

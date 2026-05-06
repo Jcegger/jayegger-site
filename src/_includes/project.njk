@@ -26,6 +26,7 @@ ogType: article
           <span class="tags" style="margin-left: 4px;">
             {% for t in tech %}<span class="tag">{{ t }}</span>{% endfor %}
           </span>
+          {% if stackDetail %}<p style="margin: 8px 0 0;" class="meta">{{ stackDetail }}</p>{% endif %}
         </li>
       {% endif %}
     </ul>

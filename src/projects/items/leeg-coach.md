@@ -11,6 +11,7 @@ role: Solo build
 timeline: Mar 2026 – present
 githubUrl: https://github.com/Jcegger/leeg-coach
 tech: [Python, Claude API, Riot API]
+stackDetail: "Python stdlib for the polling loop and terminal UI -- no dependencies beyond the Anthropic SDK. Riot's Live Client Data API runs locally during active matches, so the whole thing works on localhost with no extra infrastructure. Claude Sonnet 4.6 handles AI coaching with prompt caching to keep per-game cost under $0.10; Haiku handles lighter tasks like auto-generating matchup notes."
 draft: false
 ---
 
