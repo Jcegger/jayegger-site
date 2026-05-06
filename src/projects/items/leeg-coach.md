@@ -6,6 +6,7 @@ excerpt: A terminal-based in-game League of Legends coaching assistant powered b
 date: 2026-03-01
 featured: true
 status: wip
+purpose: by Jay for in-game League of Legends sessions to get real-time tactical coaching without alt-tabbing
 role: Solo build
 timeline: Mar 2026 – present
 githubUrl: https://github.com/Jcegger/leeg-coach

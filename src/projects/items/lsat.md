@@ -6,6 +6,7 @@ excerpt: A 14-week personal study dashboard with cross-device sync, score trendi
 date: 2026-01-15
 featured: true
 status: live
+purpose: by Jay for personal LSAT prep to track scores, surface miss patterns, and stay on pace for a 167 target
 role: Solo build
 timeline: Jan 2026 – present
 liveUrl: https://lsat.jayegger.com
