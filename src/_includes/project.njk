@@ -16,13 +16,18 @@ ogType: article
     <div class="accent">Projects{% if status %} · {{ status }}{% endif %}</div>
     <h1>{{ title }}</h1>
     <p class="meta">{{ excerpt or description }}</p>
-    {% if tech and (tech | length) > 0 %}
-      <div class="tags" style="margin: 10px 0;">
-        {% for t in tech %}
-          <span class="tag">{{ t }}</span>
-        {% endfor %}
-      </div>
-    {% endif %}
+    <ul class="list" style="margin: 12px 0;">
+      {% if role %}<li><span class="meta">Role</span> · {{ role }}</li>{% endif %}
+      {% if timeline %}<li><span class="meta">Timeline</span> · {{ timeline }}</li>{% endif %}
+      {% if tech and (tech | length) > 0 %}
+        <li>
+          <span class="meta">Stack</span> ·
+          <span class="tags" style="margin-left: 4px;">
+            {% for t in tech %}<span class="tag">{{ t }}</span>{% endfor %}
+          </span>
+        </li>
+      {% endif %}
+    </ul>
     <div class="btn-row">
       {% if liveUrl %}
         <a class="btn" href="{{ liveUrl }}" target="_blank" rel="noopener noreferrer">View Live</a>
